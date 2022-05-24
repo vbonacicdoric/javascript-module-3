@@ -5,17 +5,20 @@ import {
   makeAdminUser,
   getUserInfo,
 } from "../utils/matchers";
+import { add } from "../utils/numbers";
 
 /**
  * Write the assertions using the most appropriate matcher
  */
+
+
 describe("05-exercises", () => {
   test("addItemToList adds a new item to the initial array immutably", () => {
     expect.assertions(1);
 
     const prevList = [1, 2, 3, 4];
     const newItem = 5;
-
+    
     /**
      * Test that the addItemToList function adds the `newItem` variable to the
      * `prevList` array and returns an array that contains the previous elements
@@ -25,6 +28,12 @@ describe("05-exercises", () => {
      */
 
     // Write the assertion
+
+    const result = addItemToList(prevList, newItem)
+
+    expect(result).toContainEqual(newItem)
+  
+
   });
 
   test("addUser adds a new user to the list of users", () => {
@@ -46,6 +55,10 @@ describe("05-exercises", () => {
      */
 
     // Write the assertion
+      const result = addUser(users, "maria")
+
+      expect(result).toContainEqual(expectedUser)
+
   });
 
   test("getWeekDays returns an array of week days", () => {
@@ -62,7 +75,12 @@ describe("05-exercises", () => {
      */
 
     // Write the assertion
+    const result =  getWeekDays()
+    
+    expect(result).toEqual(expect.arrayContaining(expectedDays))
   });
+
+// otro ejercicio
 
   test("makeAdminUser returns an object with the role property", () => {
     expect.assertions(1);
@@ -82,7 +100,14 @@ describe("05-exercises", () => {
      */
 
     // Write the assertion
+
+    const result = makeAdminUser(user) 
+    expect(result).toMatchObject(expectedProperty)
+    
   });
+
+  
+ 
 
   test("getUserInfo returns an object without the address properties", () => {
     expect.assertions(1);
@@ -107,5 +132,9 @@ describe("05-exercises", () => {
      */
 
     // Write the assertion
+
+    const result = getUserInfo(user)
+
+    expect(result).not.toEqual(expect.objectContaining(userAddress))
   });
 });

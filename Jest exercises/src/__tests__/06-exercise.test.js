@@ -28,6 +28,7 @@ describe("06-exercises", () => {
     // Finish the test
     function callback(result) {
       expect(result).toBe(10);
+      done()
     }
   });
 
@@ -41,13 +42,18 @@ describe("06-exercises", () => {
    * need to wait for the promise and the result to check if the resolved
    * data is equal to the `expectedUser` variable.
    */
-  test("fetchUserOK resolves the user data", () => {
+  test("fetchUserOK resolves the user data", async() => {
     const userID = 5;
     const expectedUser = { id: userID, name: "Alex" };
 
     expect.assertions(1);
 
     // Finish the test
+    const result = await fetchUserFail(userID)
+
+    expect(result).toEqual(expectedUser)
+
+
   });
 
   /**

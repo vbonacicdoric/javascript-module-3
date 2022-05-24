@@ -5,9 +5,12 @@ import { multiplyNums, sanitizeUserData } from "../utils/matchers";
  */
 describe("03-exercises", () => {
   test("multiplyNums multiplies each number in the array by 2", () => {
-    const numbers = [1, 2, 3, 4, 5];
+  const numbers = [1, 2, 3, 4, 5];
     const expected = [2, 4, 6, 8, 10];
 
+    expect(multiplyNums(numbers)).toEqual(expected)
+    //expect([2, 4, 6, 8, 10]).toEqual([2, 4, 6, 8, 10])
+    
     expect.assertions(1);
 
     /**
@@ -20,7 +23,12 @@ describe("03-exercises", () => {
 
   test("multiplyNums doesn't mutate the original array", () => {
     const numbers = [1, 2, 3, 4, 5];
+    //multiplyNums(numbers)
+    //console.log(numbers)
+    //multiplyNums(numbers) != numbers
+    //[2 , 4 , 6 , 8 , 10] != [1, 2, 3, 4, 5]
 
+    expect(multiplyNums(numbers)).not.toEqual(numbers)
     expect.assertions(1);
 
     /**
@@ -58,5 +66,12 @@ describe("03-exercises", () => {
      * to see of calling the function with `userWithSensitiveInformation`
      * returns an object that has the same `key: value` pairs as the `safeUserData`
      */
+
+const result = sanitizeUserData(userWithSensitiveInformation);
+
+expect(result).toEqual(safeUserData);
+
+// expect.assertions(2);
+
   });
 });

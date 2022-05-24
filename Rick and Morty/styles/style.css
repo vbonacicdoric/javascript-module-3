@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 0px;
+  font-size: 1.5rem;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+#header {
+  background-color: #0b0b0b;
+  color: #4ce4f3;
+  text-shadow: 2px 2px #60f12b;
+  -webkit-text-stroke: 1px black;
+  height: 25px;
+  padding: 10px;
+}
+
+#sidebar {
+  width: 200px;
+  background-color: #000000;
+  color: #4ce4f3;
+  position: fixed;
+  top: 45px;
+  left: 0;
+  overflow-y: scroll;
+  max-height: 700px;
+}
+
+#main {
+  background-color: #75e3da;
+  height: 700px;
+  color: #010101;
+  margin-left: 200px;
+  text-align: center;
+}
+
+.episode {
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  padding: 2px 10px 2px 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.character {
+  float: left;
+}
+
+.characterImage {
+  height: 100px;
+  width: 100px;
+  margin: 10px;
+}
+
+.characterImage:hover {
+  height: 120px;
+  width: 120px;
+  margin: 0px;
+}
+
+#loadMore {
+  justify-content: center;
+  margin-left: 50px;
+}

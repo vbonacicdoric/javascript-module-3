@@ -5,13 +5,14 @@
  *
  * 1. Stores in the `func` variable an arrow function
  *    that receives two `a` and `b` parameters
- *
+ * 
  * 2. Returns the sum of both parameters
  */
 
 // Finish the code of the function
 function exercise07() {
-    let func = "";
+    let func = (a ,b) => a + b; 
+
 
     // Don’t change the code bellow this line
     return func;
