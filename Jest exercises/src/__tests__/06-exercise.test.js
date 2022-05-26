@@ -20,7 +20,7 @@ describe("06-exercises", () => {
    * @tip
    * done callback
    */
-  test("asyncAdd returns the sum of the numbers", () => {
+  test("asyncAdd returns the sum of the numbers", (done) => {
     expect.assertions(1);
 
     asyncAdd(5, 5, callback);
@@ -49,7 +49,7 @@ describe("06-exercises", () => {
     expect.assertions(1);
 
     // Finish the test
-    const result = await fetchUserFail(userID)
+    const result = await fetchUserOK(userID)
 
     expect(result).toEqual(expectedUser)
 
@@ -68,12 +68,20 @@ describe("06-exercises", () => {
    * the result to check if the rejected message is the same
    * as the `expectedMessage` variable.
    */
-  test("fetchUserFail rejects with an error message", () => {
+  test("fetchUserFail rejects with an error message",async () => {
     const userID = 5;
     const expectedMessage = `User ${userID} not found`;
 
     expect.assertions(1);
 
+  try {
+    await fetchUserFail(userID)
+  } catch(error){
+    expect(error).toEqual(expectedMessage)
+  }
+
     // Finish the test
-  });
+
+
+});
 });
